@@ -20,13 +20,23 @@ module.exports={
                 bcrypt.compare(user_password.toString(),results[0].user_password,(err,resp)=>{
                     if(err) return res.json({Error:"password compare error "})
                     if(resp){
-                        return res.json({Status:"success"})
+                        return res.json(results[0])
                     }else {
                         return res.json({Error:"password not matched"})
                     }
                 })
             }else {
                 return res.json({Error:"no phone number existed"})
+            }
+        },user_phone)
+    },
+    getOne:function(req,res){
+        const {user_phone}=req.body
+        users.getOneUser(function(err,results){
+            if(err){
+                console.log(err)
+            }else {
+                res.status(200).json(results)
             }
         },user_phone)
     }

@@ -25,5 +25,13 @@ module.exports={
         db.query(sql,[user_phone],function(error,results,fields){
             callBack(error,results  )
         })
+    },
+    getOneUser:function(callBack,user_phone){
+        const sql ='select user_name from user where user_phone=?'
+        db.query(sql,[user_phone],function(error,results,fields){
+            callBack(error,results)
+        })
     }
+
+
 }

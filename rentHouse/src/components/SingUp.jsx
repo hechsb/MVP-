@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import axios from 'axios'
 
-function SignUp() {
+function SignUp(props) {
     const[values,setValues]=useState({
         user_name:"",
         user_lastName:"",
@@ -13,6 +13,7 @@ function SignUp() {
         axios.post("http://localhost:3000/api/user/signUp",values)
         .then((response)=>{
             console.log(response.data)
+            props.changeView("signIn")
         }).catch((err)=>console.log(err))
     }
     
@@ -38,7 +39,7 @@ function SignUp() {
                 </div>           
                 <div>
                   <button type="submit" className="tm-btn-primary tm-align-right">
-                    SignUp
+                    Sign Up
                   </button>
                 </div>
               </form>
