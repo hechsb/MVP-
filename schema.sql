@@ -11,6 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema homeRent
 -- -----------------------------------------------------
+ DROP DATABASE  IF EXISTS homeRent ;
 CREATE SCHEMA IF NOT EXISTS `homeRent` DEFAULT CHARACTER SET utf8 ;
 USE `homeRent` ;
 
@@ -22,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `homeRent`.`user` (
   `user_name` VARCHAR(45) NOT NULL,
   `user_lastName` VARCHAR(45) NOT NULL,
   `user_phone` VARCHAR(45) NOT NULL,
+  `user_password` varchar(250) NOT NULL,
   PRIMARY KEY (`user_id`))
 ENGINE = InnoDB;
 
