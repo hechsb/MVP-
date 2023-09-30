@@ -10,9 +10,11 @@ const handleSubmit =(event)=>{
     event.preventDefault()
     axios.post("http://localhost:3000/api/user/signIn",values)
     .then((response)=>{
-        console.log(response.data)
-        props.namelog("welcome back "+response.data["user_name"])
-        // props.changeView("UserPage")
+        console.log(response)
+        props.setId(response.data["user_id"])
+        props.namelog("welcome back ")
+        props.changeView("UserPage")
+        props.isLog()
     }).catch((err)=>console.log(err))
 }
 

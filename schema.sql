@@ -34,8 +34,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `homeRent`.`home` (
   `home_id` INT NOT NULL AUTO_INCREMENT,
   `home_description` VARCHAR(45) NULL,
+  `home_title` varchar(45),
   `home_price` VARCHAR(45) NOT NULL,
-  `home_images` VARCHAR(45) NULL,
+  `home_images` VARCHAR(2000) NULL,
   `user_user_id` INT NOT NULL,
   PRIMARY KEY (`home_id`),
   INDEX `fk_home_user_idx` (`user_user_id` ASC) VISIBLE,

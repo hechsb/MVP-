@@ -85,6 +85,7 @@ h2 { margin-top: 0; }
     width: 90%;
     margin-left: 500px;
     
+    
 }
 
 .tm-left-inner { position: fixed; }
@@ -239,7 +240,7 @@ h2 { margin-top: 0; }
 /* About */
 .tm-about-box-1 { padding: 40px 30px 50px 0; }
 .tm-about-box-2 { padding: 50px 40px 30px; }
-.tm-about-header { margin-left: 150px; }
+.tm-about-header { margin-left: 100px; }
 
 /* Special */
 .tm-special-items {
@@ -378,4 +379,23 @@ h2 { margin-top: 0; }
 
     .tm-drinks-nav > ul > li { margin-bottom: 10px; }
     .tm-drinks-nav > ul > li > a { display: block; }
+    .left-buttons {
+        /* Remove position: absolute; */
+        left: 20px; /* Adjust the left position as needed */
+        top: 50%; /* Adjust the top position as needed */
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .left-buttons {
+        /* No position: absolute; */
+        left: 20px; /* Adjust the left position as needed */
+        top: 50%; /* Adjust the top position as needed */
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
 }

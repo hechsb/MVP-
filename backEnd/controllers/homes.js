@@ -25,19 +25,19 @@ module.exports ={
 
     addHouse : function(req,res){
         const {user_user_id}=req.params
-        const {home_description,home_price,home_images}=req.body
+        const {home_description,home_price,home_images,home_title}=req.body
         homes.addHome(function(err,results){
             if(err){
                 console.log(err)
             }else {
                 res.status(201).json(results)
             }
-        },home_description,home_price,home_images,user_user_id)
+        },home_description,home_price,home_images,user_user_id,home_title)
     },
 
     updateHouse :function(req,res){
         const {home_id}=req.params
-        const {home_description,home_price,home_images}=req.body
+        const {home_description,home_price,home_images,home_title}=req.body
         homes.updateHome(function(err,results){
             if(err){
                 console.log(err)
