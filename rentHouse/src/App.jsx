@@ -16,7 +16,7 @@ function App() {
   const [logged,setLogged]=useState(false)
   const[houses,setHouses]=useState(data)
   const [userId,setUserId]=useState(null)
-  console.log(userId)
+  console.log(view)
 
   useEffect(() => {
     axios.get("http://localhost:3000/api/home/getAll")
@@ -68,17 +68,17 @@ function App() {
                   
                    </div>
               </div>
-              {view !== "UserPage" && (
+              {((view !== "UserPage") && (view !=="Addhouse"))  && (
                 <nav className="tm-site-nav">
                   <ul className="tm-site-nav-ul">
                     <li className="tm-page-nav-item">
-                      <div className="tm-page-link active">
+                      <div className="tm-page-link ">
                         <i className="fas fa-mug-hot tm-page-link-icon"></i>
                         <button onClick={() => { changeView("ListHouse") }}>Available houses</button>
                       </div>
                     </li>
                     <li className="tm-page-nav-item">
-                      <div className="tm-page-link">
+                      <div className="tm-page-link ">
                         <i className="fas fa-users tm-page-link-icon"></i>
                         <button onClick={() => { changeView("Search") }}>Search</button>
                       </div>
@@ -115,8 +115,8 @@ function App() {
                 {view === "Search" && <Search />}
               </div>
               <div id="userPage" className="tm-page-content">
-                {view === "UserPage" && <UserPage data={houses} />}
-                {view==="Addhouse" && <AddHouse userId={userId} implementData={implementData} />}
+                {view === "UserPage" && <UserPage data={houses} changeView={changeView} />}
+                {view==="Addhouse" && <AddHouse userId={userId} implementData={implementData} changeView={changeView} />}
               </div>
             </main>
           </div>

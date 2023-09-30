@@ -6,6 +6,36 @@ function UserPage(props) {
     
   return (
     <div>
+      
+                      <nav className="tm-site-nav">
+                  <ul className="tm-site-nav-ul">
+                    <li className="tm-page-nav-item">
+                      <div className="tm-page-link active">
+                        <i className="fas fa-mug-hot tm-page-link-icon"></i>
+                        <button onClick={() => { props.changeView("ListHouse") }}>Available houses</button>
+                      </div>
+                    </li>
+                    <li className="tm-page-nav-item">
+                      <div className="tm-page-link">
+                        <i className="fas fa-users tm-page-link-icon"></i>
+                        <button onClick={() => { props.changeView("Search") }}>Search</button>
+                      </div>
+                    </li>
+                    <li className="tm-page-nav-item">
+                      <div className="tm-page-link">
+                        <i className="fas fa-glass-martini tm-page-link-icon"></i>
+                        <button onClick={() => { props.changeView("Addhouse") }}>Rent you house</button>
+                      </div>
+                    </li>
+                    <li className="tm-page-nav-item">
+                      <div className="tm-page-link">
+                        <i className="fas fa-comments tm-page-link-icon"></i>
+                        <button onClick={() => { props.changeView("signIn") }}>logged Out</button>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>
+                
                    
     {props.data.map((house,index)=>{
         return(<div className="tm-list-item" key={index}> 

@@ -47,9 +47,10 @@ function AddHouse(props) {
                     
                 <div>
                   <button type="submit" className="tm-btn-primary tm-align-right">
-                    Sign In
+                    Post
                   </button>
                 </div>
+                <button onClick={()=>{props.changeView("UserPage")}}>back</button>
               </form>
             </div>
             </div>
